@@ -1,0 +1,77 @@
+<TABLE cellSpacing=0 cellPadding=0 bgColor=#cccccc border=0 id="table5">
+        <TBODY>
+          <TR>
+            <TD valign="top" bgColor=#ffffff>
+	<div align="center">
+	<table border="0" id="table6" bordercolor="#CCCCCC" style="border: 0 solid #C0C0C0">
+	<tr>
+	<td>
+	<p><SCRIPT language="VBScript">
+Dim FileList,FileListArr,TxtList,TxtListArr,LinkList,LinkArr
+FileList = "img/001.jpg,img/002.jpg,img/005.jpg,img/003.jpg,img/004.jpg"
+LinkList = "http://www.5sso.com/vod/?f=10295,http://www.5sso.com/vod/?f=10295,http://www.5sso.com/vod/?f=10295,http://www.5sso.com/vod/?f=10295,http://www.5sso.com/vod/?f=10295"
+TxtList = "<a  href=http://www.5sso.com/vod/?f=10295  target=_blank>美丽豪乳女优激情写真</a>,<a  href=http://www.5sso.com/vod/?f=10295  target=_blank>运动美女激情写真</a>,<a  href=http://www.5sso.com/vod/?f=10295  target=_blank>小仓依然粉嫩</a>,<a  href=http://www.5sso.com/vod/?f=10295  target=_blank>美女警告，别再靠近</a>,<a  href=http://www.5sso.com/vod/?f=10295  target=_blank>超级豪乳松金洋子欲望写真</a>"
+FileListArr = Split(FileList,",")
+LinkArr = Split(LinkList,",")
+TxtListArr = Split(TxtList,",")
+Dim CanPlay
+CanPlay = CInt(Split(Split(navigator.appVersion,";")(1)," ")(2))>5
+Dim FilterStr
+FilterStr = "RevealTrans(duration=2,transition=23)"
+FilterStr = FilterStr + ";BlendTrans(duration=2)"
+If CanPlay Then
+FilterStr = FilterStr + ";progid:DXImageTransform.Microsoft.Fade(duration=2,overlap=0)"
+FilterStr = FilterStr + ";progid:DXImageTransform.Microsoft.Wipe(duration=3,gradientsize=0.25,motion=reverse)"
+Else
+Msgbox "幻灯片播放具有多种动态图片切换效果，但此功能需要您的浏览器为IE5.5或以上版本，否则您将只能看到部分的切换效果。",64
+End If
+Dim FilterArr
+FilterArr = Split(FilterStr,";")
+Dim PlayImg_M
+PlayImg_M = 5 * 1000  
+Dim I
+I = 1
+Sub ChangeImg
+Do While FileListArr(I)=""
+I = I + 1
+If I>UBound(FileListArr) Then I = 0
+Loop
+Dim J
+If I>UBound(FileListArr) Then I = 0
+Randomize
+J = Int(Rnd * (UBound(FilterArr)+1))
+Img.style.filter = FilterArr(J)
+Img.filters(0).Apply
+Img.Src = FileListArr(I)
+Img.filters(0).play
+Link.Href = LinkArr(I)
+Txt.filters(0).Apply
+Txt.innerHTML = TxtListArr(I)
+Txt.filters(0).play
+I = I + 1
+If I>UBound(FileListArr) Then I = 0
+TempImg.Src = FileListArr(I)
+TempLink.Href = LinkArr(I)
+SetTimeout "ChangeImg", PlayImg_M,"VBScript"
+End Sub
+</SCRIPT>
+<TABLE WIDTH="100%" height="100%" BORDER="0" CELLSPACING="6" CELLPADDING="0">
+<TR ID="NoScript">
+<TD Align="Center" Style="Color:White">对不起，图片浏览功能需脚本支持，但您的浏览器已经设置了禁止脚本运行。请您在浏览器设置中调整有关安全选项。</TD>
+</TR>
+<TR Style="Display:none" ID="CanRunScript"><TD HEIGHT="100%" Align="Center" vAlign="Center"><a id="Link" " target=_blank"><Img ID="Img"  Width="231" Height="288" Border="0" ></a>
+</TD></TR><TR Style="Display:none"><TD><a id=TempLink " target=_blank"><Img ID="TempImg" Border="0"></a></TD></TR>
+<TR><TD HEIGHT="100%" Align="Center" vAlign="Top">
+<div ID="Txt" style="PADDING-LEFT: 5px; Z-INDEX: 1; FILTER: progid:DXImageTransform.Microsoft.Fade(duration=1,overlap=0); POSITION:"><a  href=http://www.5sso.com/vod/?f=10295  target=_blank>美丽豪乳女优激情写真</a></div></TD></TR>
+</TABLE>
+<Script Language="VBScript">
+NoScript.Style.Display = "none"
+CanRunScript.Style.Display = ""
+Img.Src = FileListArr(0)
+Link.Href = LinkArr(0)
+SetTimeout "ChangeImg", PlayImg_M,"VBScript"
+</Script>
+</td></tr>
+
+
+</table>

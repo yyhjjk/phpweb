@@ -1,0 +1,132 @@
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A:active {
+	TEXT-DECORATION: none
+}
+.stitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #ffffff; FONT-FAMILY: "ËÎÌו"
+}
+TD {
+	FONT-SIZE: 12px
+}
+.css {
+	BORDER-RIGHT: #dedede 1px; BORDER-TOP: #dedede 1px; BORDER-LEFT: #dedede 1px; BORDER-BOTTOM: #dedede 1px solid
+}
+.font1 {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #4e4e4e; LINE-HEIGHT: 22px; TEXT-DECORATION: none
+}
+.font2 {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #749101; TEXT-DECORATION: none
+}
+.font3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.table {
+	BORDER-RIGHT: #92b400 1px solid; BORDER-TOP: #92b400 1px solid; BORDER-LEFT: #92b400 1px solid; BORDER-BOTTOM: #92b400 1px solid
+}
+.font4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff6600; TEXT-DECORATION: none
+}
+.table2 {
+	BORDER-RIGHT: #92b400 1px solid; BORDER-TOP: #92b400 1px solid; BORDER-LEFT: #92b400 1px solid; BORDER-BOTTOM: #92b400 1px solid
+}
+.font44 {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #990033; TEXT-DECORATION: none
+}
+.font45 {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+.fontt88 {
+	COLOR: #ffffff; font_size: 12px
+}
+.line {
+	BORDER-RIGHT: #4f6301 1px; BORDER-TOP: #4f6301 1px; BORDER-LEFT: #4f6301 1px; BORDER-BOTTOM: #4f6301 1px solid
+}
+.mline {
+	BORDER-TOP-STYLE: none; BORDER-BOTTOM: #999999 1px dashed; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.mline2 {
+	COLOR: #fc1e75; BORDER-TOP-STYLE: none; BORDER-BOTTOM: #999999 1px dashed; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; font_size: 12px
+}
+.table55 {
+	BORDER-RIGHT: #e4e4e4 1px solid; BORDER-TOP: #e4e4e4 1px solid; FONT-WEIGHT: lighter; FONT-SIZE: 12px; BORDER-LEFT: #e4e4e4 1px solid; WIDTH: 100px; COLOR: #4e4e4e; BORDER-BOTTOM: #e4e4e4 1px solid; TEXT-DECORATION: none
+}
+.inforfont {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #4e4e4e; LINE-HEIGHT: 26px
+}
+.flink {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.fontleirong {
+	FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #4e4e4e; LINE-HEIGHT: 14px
+}
+.fontstitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #146900
+}
+.bbkk {
+	CLEAR: none; BORDER-RIGHT: #63882b; PADDING-RIGHT: 1px; BACKGROUND-POSITION: center center; BORDER-TOP: medium none; PADDING-LEFT: 1px; FLOAT: none; BACKGROUND-IMAGE: url(images/eback.jpg); PADDING-BOTTOM: 1px; MARGIN: 1px; BORDER-LEFT: #63882b; WIDTH: 149px; PADDING-TOP: 1px; BORDER-BOTTOM: #63882b; BACKGROUND-REPEAT: repeat-x; HEIGHT: 21px
+}
+.fontslogin {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #666666; TEXT-DECORATION: none
+}
+.table33 {
+	BORDER-RIGHT: #e4e4e4 3px solid; BORDER-TOP: #e4e4e4 3px; BORDER-LEFT: #e4e4e4 3px solid; BORDER-BOTTOM: #e4e4e4 3px
+}
+.tablegreen {
+	BORDER-RIGHT: #90b300 1px solid; BORDER-TOP: #90b300 1px solid; BORDER-LEFT: #90b300 1px solid; BORDER-BOTTOM: #90b300 1px solid
+}
+.font66 {
+	FONT-SIZE: 15px; COLOR: #ff0000
+}
+.txtline {
+	BORDER-RIGHT: #006600 1px solid; BORDER-TOP: #006600 1px solid; BORDER-LEFT: #006600 1px solid; BORDER-BOTTOM: #006600 1px solid
+}
+.txtInput {
+	BORDER-RIGHT: #cad7d0 1px solid; BORDER-TOP: #cad7d0 1px solid; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 18px; BORDER-LEFT: #cad7d0 1px solid; WIDTH: 250px; PADDING-TOP: 3px; BORDER-BOTTOM: #cad7d0 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 3px; HEIGHT: 30px
+}
+.font99 {
+	FONT-WEIGHT: bold; FONT-SIZE: 24px; COLOR: #000000
+}
+.font77 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #006600
+}
+.rline {
+	BORDER-RIGHT: #ffd4e3 3px; BORDER-TOP: #ffd4e3 3px; BORDER-LEFT: #ffd4e3 3px; BORDER-BOTTOM: #ffd4e3 3px solid
+}
+.text {
+	BORDER-RIGHT: #000000 thin solid; BORDER-TOP: #000000 thin solid; BORDER-LEFT: #000000 thin solid; BORDER-BOTTOM: #000000 thin solid
+}
+.mline2r {
+	FONT-SIZE: 12px; COLOR: #fc1e75; BORDER-TOP-STYLE: none; BORDER-BOTTOM: #999999 1px dashed; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.PicNv {
+	FONT-SIZE: 12px; MARGIN: 5px; WIDTH: 400px; TEXT-ALIGN: center
+}
+.PicNv A {
+	MARGIN-LEFT: 4px; MARGIN-RIGHT: 4px
+}
+#ShopPicBox {
+	CURSOR: hand
+}
+.ProvAr {
+	FONT-SIZE: 12px; MARGIN: 20px; LETTER-SPACING: 2px
+}
+.NextAr {
+	FONT-SIZE: 12px; MARGIN: 20px; LETTER-SPACING: 2px
+}
+.middle1 {
+	TEXT-ALIGN: center
+}
+.NextNote {
+	MARGIN-TOP: 5px; COLOR: red
+}
+.NvBox {
+	MARGIN-TOP: 5px; FONT-SIZE: 12px; LETTER-SPACING: 2px
+}

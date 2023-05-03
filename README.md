@@ -13,10 +13,10 @@
 ## 使用基于对象的编程策略，通过FORMS表单类(forms.php)，makes生成静态页面类(make_inc.php)，mysql数据库类(mysql.php)，Template模板类(template.php)实现了网站核心功能抽象，代码简洁高效
 
 首页
-![image](https://github.com/yyhjjk/phpweb/blob/master/%E9%A6%96%E9%A1%B5.jpg)
+![image](https://github.com/yyhjjk/phpweb/blob/master/index.jpg)
 
 后台
-![image](https://github.com/yyhjjk/phpweb/blob/master/%E5%90%8E%E5%8F%B0.jpg)
+![image](https://github.com/yyhjjk/phpweb/blob/master/hou.jpg)
 
 添加文章
-![image](https://github.com/yyhjjk/phpweb/blob/master/%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0.jpg)
+![image](https://github.com/yyhjjk/phpweb/blob/master/add.jpg)

@@ -1,12 +1,12 @@
 <?php
-// ========================== ÎÄ¼şËµÃ÷ ==========================// 
-// ±¾ÎÄ¼şËµÃ÷£º³ÌĞò×Ô¶¯°²×°½Å±¾
+// ========================== æ–‡ä»¶è¯´æ˜ ==========================// 
+// æœ¬æ–‡ä»¶è¯´æ˜ï¼šç¨‹åºè‡ªåŠ¨å®‰è£…è„šæœ¬
 // -------------------------------------------------------------// 
-// Ğ¡Öí»áÆø¹¦
+// å°çŒªä¼šæ°”åŠŸ
 // =============================================================// 
 error_reporting(7);
 
-// ÔÊĞí³ÌĞòÔÚ register_globals = off µÄ»·¾³ÏÂ¹¤×÷
+// å…è®¸ç¨‹åºåœ¨ register_globals = off çš„ç¯å¢ƒä¸‹å·¥ä½œ
 if ( function_exists('ini_get') ) {
 	$onoff = ini_get('register_globals');
 } else {
@@ -17,7 +17,7 @@ if ($onoff != 1) {
 	@extract($_GET, EXTR_SKIP);
 }
 
-// È¥³ı×ªÒå×Ö·û
+// å»é™¤è½¬ä¹‰å­—ç¬¦
 function stripslashes_array($array) {
 	while (list($k,$v) = each($array)) {
 		if (is_string($v)) {
@@ -29,20 +29,20 @@ function stripslashes_array($array) {
 	return $array;
 }
 
-// ÅĞ¶Ï magic_quotes_gpc ×´Ì¬
+// åˆ¤æ–­ magic_quotes_gpc çŠ¶æ€
 if (get_magic_quotes_gpc()) {
     $_GET = stripslashes_array($_GET);
     $_POST = stripslashes_array($_POST);
     $_COOKIE = stripslashes_array($_COOKIE);
 }
 
-set_magic_quotes_runtime(0);
+//set_magic_quotes_runtime(0);
 
-// ·µ»ØÉÏÒ»Ò³º¯Êı
+// è¿”å›ä¸Šä¸€é¡µå‡½æ•°
 function sa_exit($msg) {
 	global $step;
 	echo "<p>$msg</p>";
-	echo "<p><a href=\"javascript:history.go(-1);\">·µ»ØÉÏÒ»Ò³</a></p>";
+	echo "<p><a href=\"javascript:history.go(-1);\">è¿”å›ä¸Šä¸€é¡µ</a></p>";
 	cpfooter();
 	exit;
 }
@@ -51,11 +51,11 @@ function cpheader(){
 ?>
 <HTML>
 <HEAD>
-<TITLE>Sarticle°²×°½Å±¾</TITLE>
+<TITLE>phpå†…å®¹ç®¡ç†ç³»ç»Ÿå®‰è£…è„šæœ¬</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <STYLE type=text/css>
-BODY {BACKGROUND-COLOR: #EEEEEE; COLOR: #3F3849; line-height: 18px;	font-family: "Verdana", "Tahoma", "ËÎÌå";	FONT-SIZE: 12px;}
-TD{FONT-FAMILY: "Verdana", "Tahoma", "ËÎÌå"; FONT-SIZE: 12px; line-height: 18px;}
+BODY {BACKGROUND-COLOR: #EEEEEE; COLOR: #3F3849; line-height: 18px;	font-family: "Verdana", "Tahoma", "å®‹ä½“";	FONT-SIZE: 12px;}
+TD{FONT-FAMILY: "Verdana", "Tahoma", "å®‹ä½“"; FONT-SIZE: 12px; line-height: 18px;}
 A:active {COLOR: #000000 ;}
 A:visited {COLOR: #000000 ;text-decoration: none}
 A:hover {COLOR: #3D4F7A;text-decoration: underline}
@@ -66,7 +66,7 @@ A:link {COLOR: #000000;text-decoration: none}
 <TABLE width=760 border=0 align=center cellPadding=5 cellSpacing=5>
   <TBODY>
     <TR> 
-      <TD width="100%"><div align="center"><b>Sarticle°²×°½Å±¾</b></div>
+      <TD width="100%"><div align="center"><b>phpå†…å®¹ç®¡ç†ç³»ç»Ÿå®‰è£…è„šæœ¬</b></div>
         <hr noshade></TD>
     </TR>
     <TR>
@@ -82,7 +82,7 @@ function cpfooter(){
       <TD align=right>
       <hr align="center" noshade>
       <center>
-        <b>Copyright &copy; 2004 Security Angel Team[S4T] All Rights Reserved.</b>
+        <b>Copyright &copy; 2023 tianyafengyun All Rights Reserved.</b>
       </center></TD>
     </TR>
   </TBODY>
@@ -96,24 +96,24 @@ cpheader();
 if (empty($step)) {
 	$step = "1";
     require "config.php";
-	echo "<p><b>ÉèÖÃÊı¾İ¿â</b></p>\n";
+	echo "<p><b>è®¾ç½®æ•°æ®åº“</b></p>\n";
 	echo "<p><form action=\"install.php\"  method=\"post\"></p>\n";
 	echo "<p><input type=\"hidden\" name=\"step\" value=\"".($step+1)."\"></p>\n";
-    echo "<p>·şÎñÆ÷µØÖ·: <input type=\"text\" value=\"$servername\" name=\"servername\"></p>\n";
-    echo "<p>Êı¾İ¿âÃû: <input type=\"text\" value=\"$dbname\" name=\"dbname\"></p>\n";
-    echo "<p>Êı¾İ¿âÓÃ»§Ãû: <input type=\"text\" value=\"$dbusername\" name=\"dbusername\"></p>\n";
-    echo "<p>Êı¾İ¿âÓÃ»§ÃÜÂë: <input type=\"password\" value=\"\" name=\"dbpassword\"></p>\n";
-    echo "<p>Êı¾İ±íÇ°×º: <input type=\"text\" value=\"$db_prefix\" name=\"db_prefix\"></p>\n";
-	echo "<p>É¾³ıÈÕÖ¾µÄÃÜ³×: <input type=\"text\" value=\"\" name=\"dellog_pass\"></p>\n";
-	echo "<p>ÒªÉ¾³ıºóÌ¨µÄ¹ÜÀí¼ÇÂ¼ÒÔ¼°µÇÂ½¼ÇÂ¼£¬±ØĞëÊäÈë´ËÃÜ³×.</p>";
-    echo "<p><input type=\"submit\" name=\"next\" value=\"ÏÂÒ»²½\"></p>\n";
+    echo "<p>æœåŠ¡å™¨åœ°å€: <input type=\"text\" value=\"$servername\" name=\"servername\"></p>\n";
+    echo "<p>æ•°æ®åº“å: <input type=\"text\" value=\"$dbname\" name=\"dbname\"></p>\n";
+    echo "<p>æ•°æ®åº“ç”¨æˆ·å: <input type=\"text\" value=\"$dbusername\" name=\"dbusername\"></p>\n";
+    echo "<p>æ•°æ®åº“ç”¨æˆ·å¯†ç : <input type=\"password\" value=\"\" name=\"dbpassword\"></p>\n";
+    echo "<p>æ•°æ®è¡¨å‰ç¼€: <input type=\"text\" value=\"$db_prefix\" name=\"db_prefix\"></p>\n";
+	echo "<p>åˆ é™¤æ—¥å¿—çš„å¯†åŒ™: <input type=\"text\" value=\"\" name=\"dellog_pass\"></p>\n";
+	echo "<p>è¦åˆ é™¤åå°çš„ç®¡ç†è®°å½•ä»¥åŠç™»é™†è®°å½•ï¼Œå¿…é¡»è¾“å…¥æ­¤å¯†åŒ™.</p>";
+    echo "<p><input type=\"submit\" name=\"next\" value=\"ä¸‹ä¸€æ­¥\"></p>\n";
 }
 
 // step three
 if($step==2){
 
    if(trim($dbname)=="" or trim($servername)=="" or trim($dbusername)=="" or trim($dellog_pass=="")){
-      sa_exit("Çë·µ»Ø²¢È·ÈÏËùÓĞÑ¡Ïî¾ùÒÑÕıÈ·ÌîĞ´");
+      sa_exit("è¯·è¿”å›å¹¶ç¡®è®¤æ‰€æœ‰é€‰é¡¹å‡å·²æ­£ç¡®å¡«å†™");
    }
    $file = "./config.php";
 
@@ -121,58 +121,60 @@ if($step==2){
       @chmod ($file, 0777);
    }
 
-   $fp = fopen($file,w);
+   $fp = fopen($file,'w');
    $filecontent = "<?php
 
-/********** Êı¾İ¿âÖ÷»úÃû»òIP **********/
+/********** æ•°æ®åº“ä¸»æœºåæˆ–IP **********/
 \$servername = '$servername';
 
-/********** Êı¾İ¿âÓÃ»§Ãû **********/
+/********** æ•°æ®åº“ç”¨æˆ·å **********/
 \$dbusername = '$dbusername';
 
-/********** Êı¾İ¿âÃÜÂë **********/
+/********** æ•°æ®åº“å¯†ç  **********/
 \$dbpassword = '$dbpassword';
 
-/********** Êı¾İ¿âÁ¬½Ó·½Ê½ **********/
+/********** æ•°æ®åº“è¿æ¥æ–¹å¼ **********/
 \$usepconnect = '1';
 
-/********** Êı¾İ¿âÃû **********/
+/********** æ•°æ®åº“å **********/
 \$dbname = '$dbname';
 
-/********** Êı¾İ±íÇ°×º **********/
+/********** æ•°æ®è¡¨å‰ç¼€ **********/
 \$db_prefix = '$db_prefix';
 
-/********** É¾³ıÈÕÖ¾µÄÃÜ³× **********/
+/********** åˆ é™¤æ—¥å¿—çš„å¯†åŒ™ **********/
 \$dellog_pass = '$dellog_pass';
 
 ?>";
    fwrite($fp,$filecontent,strlen($filecontent));
    fclose($fp);
 
+   
+   $link = mysqli_connect($servername,$dbusername,$dbpassword);
+   $sql = "CREATE DATABASE `$dbname`";
 
-   $link = mysql_connect($servername,$dbusername,$dbpassword);
    if ($link) {
-       echo "<p>Êı¾İ¿â·şÎñÆ÷Á¬½Ó³É¹¦</p>";
-       if (mysql_select_db($dbname)) {
-           echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=1\">ÏÂÒ»²½(É¾³ıÒÑ´æÔÚµÄ±í)</a></p>";
-           echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=0\">ÏÂÒ»²½(²»É¾³ıÒÑ´æÔÚµÄ±í)</a></p>";
+       echo "<p>æ•°æ®åº“æœåŠ¡å™¨è¿æ¥æˆåŠŸ</p>";
+       if (mysqli_select_db($link,$dbname)) {
+           echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=1\">ä¸‹ä¸€æ­¥(åˆ é™¤å·²å­˜åœ¨çš„è¡¨)</a></p>";
+           echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=0\">ä¸‹ä¸€æ­¥(ä¸åˆ é™¤å·²å­˜åœ¨çš„è¡¨)</a></p>";
        } else {
-           echo "<p>Õı³¢ÊÔ´´½¨Êı¾İ¿â $dbname</p>";
+           echo "<p>æ­£å°è¯•åˆ›å»ºæ•°æ®åº“ $dbname</p>";
 
-           if (mysql_create_db($dbname)) {
-               echo "<p>Êı¾İ¿â´´½¨³É¹¦</p>";
-               echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=1\">ÏÂÒ»²½(É¾³ıÒÑ´æÔÚµÄ±í)</a></p>";
-               echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=0\">ÏÂÒ»²½(²»É¾³ıÒÑ´æÔÚµÄ±í)</a></p>";
+           if (mysqli_query($link, $sql)) {
+               echo "<p>æ•°æ®åº“åˆ›å»ºæˆåŠŸ</p>";
+               echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=1\">ä¸‹ä¸€æ­¥(åˆ é™¤å·²å­˜åœ¨çš„è¡¨)</a></p>";
+               echo "<p><a href=\"./install.php?step=".($step+1)."&delete_existing=0\">ä¸‹ä¸€æ­¥(ä¸åˆ é™¤å·²å­˜åœ¨çš„è¡¨)</a></p>";
            } else {
-               echo "<p>Êı¾İ¿â´´½¨Ê§°Ü</p>";
-               echo "<p><a href=\"./install.php?step=".($step-1)."\">·µ»ØÉÏÒ»²½</a></p>";
+               echo "<p>æ•°æ®åº“åˆ›å»ºå¤±è´¥</p>";
+               echo "<p><a href=\"./install.php?step=".($step-1)."\">è¿”å›ä¸Šä¸€æ­¥</a></p>";
            }
        }
 
    } else {
-       echo "<p>Êı¾İ¿â·şÎñÆ÷Á¬½ÓÊ§°Ü</p>";
+       echo "<p>æ•°æ®åº“æœåŠ¡å™¨è¿æ¥å¤±è´¥</p>";
    }
-   mysql_close($link);
+ mysqli_close($link);
 }
 
 
@@ -285,18 +287,18 @@ CREATE TABLE `".$db_prefix."setting` (
   PRIMARY KEY  (`settingid`)
 ) ;
 
-INSERT INTO `".$db_prefix."setting` VALUES (1, 'ÎÄÕÂÏµÍ³Ãû³Æ', '½«ÔÚËùÓĞÒ³Ãæ±êÌâÉÏÏÔÊ¾¸ÃÃû³Æ', 'title', 'ÎÄÕÂÖĞĞÄ', 'string');
-INSERT INTO `".$db_prefix."setting` VALUES (2, 'ÎÄÕÂÏµÍ³µØÖ·', 'ÎÄÕÂÏµÍ³ÔÚÍøÂçÉÏµÄµØÖ·', 'url', 'http://www.ssfun.com', 'string');
-INSERT INTO `".$db_prefix."setting` VALUES (3, 'Ç°Ì¨Ä£°å', '', 'template', 'default', 'templates');
-INSERT INTO `".$db_prefix."setting` VALUES (4, 'Ã¿Ò³ÏÔÊ¾¶àÉÙÌõÎÄÕÂ', '', 'articlenum', '20', 'integer');
-INSERT INTO `".$db_prefix."setting` VALUES (5, 'ÎÄÕÂ·Ö¶àÉÙÁĞÏÔÊ¾', '', 'colnum', '2', 'integer');
-INSERT INTO `".$db_prefix."setting` VALUES (6, 'Ã¿Ò³ÏÔÊ¾¶àÉÙÌõÆÀÂÛ', '', 'commentnum', '20', 'integer');
-INSERT INTO `".$db_prefix."setting` VALUES (7, 'ËÑË÷ÒıÇæÏÔÊ¾¶àÉÙ¸ö½á¹û', '', 'searchnum', '20', 'integer');
-INSERT INTO `".$db_prefix."setting` VALUES (8, 'ÊÇ·ñ¿ª·ÅÆÀÂÛ¹¦ÄÜ', '', 'iscomment', '1', 'yesno');
-INSERT INTO `".$db_prefix."setting` VALUES (9, 'Ìá½»ÆÀÂÛÊ±¼ä¼ä¸ô', '¿ÉÒÔ·ÀÖ¹ËûÈË¹àË®,µ¥Î»Ãë,0Îª²»ÏŞÖÆ', 'post_time', '20', 'integer');
-INSERT INTO `".$db_prefix."setting` VALUES (10, 'HTMLÒ³´æ·ÅÄ¿Â¼', '', 'htmldir', 'html', 'string');
-INSERT INTO `".$db_prefix."setting` VALUES (11, '¸½¼ş´æ·ÅÄ¿Â¼', '', 'attachdir', 'attachments', 'string');
-INSERT INTO `".$db_prefix."setting` VALUES (12, 'ÔÊĞíµÄ×î´ó¸½¼ş´óĞ¡', 'ÉÏ´«µÄ¸½¼şµÄ×î´ó×Ö½ÚÊı£¬ÉèÎª0½«²»×öÏŞÖÆ¡£<br>1 KB = 1024 ×Ö½Ú 1 MB = 1048576 ×Ö½Ú', 'maxattachsize', '1048576', 'integer');
+INSERT INTO `".$db_prefix."setting` VALUES (1, 'æ–‡ç« ç³»ç»Ÿåç§°', 'å°†åœ¨æ‰€æœ‰é¡µé¢æ ‡é¢˜ä¸Šæ˜¾ç¤ºè¯¥åç§°', 'title', 'æ–‡ç« ä¸­å¿ƒ', 'string');
+INSERT INTO `".$db_prefix."setting` VALUES (2, 'æ–‡ç« ç³»ç»Ÿåœ°å€', 'æ–‡ç« ç³»ç»Ÿåœ¨ç½‘ç»œä¸Šçš„åœ°å€', 'url', 'http://www.ssfun.com', 'string');
+INSERT INTO `".$db_prefix."setting` VALUES (3, 'å‰å°æ¨¡æ¿', '', 'template', 'default', 'templates');
+INSERT INTO `".$db_prefix."setting` VALUES (4, 'æ¯é¡µæ˜¾ç¤ºå¤šå°‘æ¡æ–‡ç« ', '', 'articlenum', '20', 'integer');
+INSERT INTO `".$db_prefix."setting` VALUES (5, 'æ–‡ç« åˆ†å¤šå°‘åˆ—æ˜¾ç¤º', '', 'colnum', '2', 'integer');
+INSERT INTO `".$db_prefix."setting` VALUES (6, 'æ¯é¡µæ˜¾ç¤ºå¤šå°‘æ¡è¯„è®º', '', 'commentnum', '20', 'integer');
+INSERT INTO `".$db_prefix."setting` VALUES (7, 'æœç´¢å¼•æ“æ˜¾ç¤ºå¤šå°‘ä¸ªç»“æœ', '', 'searchnum', '20', 'integer');
+INSERT INTO `".$db_prefix."setting` VALUES (8, 'æ˜¯å¦å¼€æ”¾è¯„è®ºåŠŸèƒ½', '', 'iscomment', '1', 'yesno');
+INSERT INTO `".$db_prefix."setting` VALUES (9, 'æäº¤è¯„è®ºæ—¶é—´é—´éš”', 'å¯ä»¥é˜²æ­¢ä»–äººçŒæ°´,å•ä½ç§’,0ä¸ºä¸é™åˆ¶', 'post_time', '20', 'integer');
+INSERT INTO `".$db_prefix."setting` VALUES (10, 'HTMLé¡µå­˜æ”¾ç›®å½•', '', 'htmldir', 'html', 'string');
+INSERT INTO `".$db_prefix."setting` VALUES (11, 'é™„ä»¶å­˜æ”¾ç›®å½•', '', 'attachdir', 'attachments', 'string');
+INSERT INTO `".$db_prefix."setting` VALUES (12, 'å…è®¸çš„æœ€å¤§é™„ä»¶å¤§å°', 'ä¸Šä¼ çš„é™„ä»¶çš„æœ€å¤§å­—èŠ‚æ•°ï¼Œè®¾ä¸º0å°†ä¸åšé™åˆ¶ã€‚<br>1 KB = 1024 å­—èŠ‚ 1 MB = 1048576 å­—èŠ‚', 'maxattachsize', '1048576', 'integer');
 
     
 
@@ -323,7 +325,7 @@ CREATE TABLE `".$db_prefix."user` (
 
 ";
 	
-	echo "<p><b>ÕıÔÚ½¨Á¢Êı¾İ±í......</b></p>";
+	echo "<p><b>æ­£åœ¨å»ºç«‹æ•°æ®è¡¨......</b></p>";
 	echo "<p><form action=\"install.php\"  method=\"post\"></p>";
 	echo "<p><input type=\"hidden\" name=\"step\" value=\"".($step+1)."\"></p>";
     $a_query = explode(";",$mysql_data);
@@ -331,17 +333,17 @@ CREATE TABLE `".$db_prefix."user` (
            $query = trim($query);
            if ($query) {
                if (strstr($query,'CREATE TABLE')) {
-                   ereg('CREATE TABLE ([^ ]*)',$query,$regs);
+                preg_match('/CREATE TABLE ([^ ]*)/', $query, $regs);
                    if ($delete_existing) {
                        $DB->query("DROP TABLE IF EXISTS $regs[1]");
                    }
-				   echo "<p>ÕıÔÚ½¨Á¢±í: ".$regs[1]." ¡­¡­ ";
+				   echo "<p>æ­£åœ¨å»ºç«‹è¡¨: ".$regs[1]." â€¦â€¦ ";
 				   $DB->query($query);
 					if ($query)
 					{
-						echo "³É¹¦</p>\n";
+						echo "æˆåŠŸ</p>\n";
 					} else {
-						echo "Ê§°Ü</p>\n";
+						echo "å¤±è´¥</p>\n";
 					}
                } else {
                    $DB->query($query);
@@ -349,39 +351,39 @@ CREATE TABLE `".$db_prefix."user` (
 
            }
     }
-	echo "<p><input type=\"submit\" name=\"next\" value=\"ÏÂÒ»²½\"></p>";
+	echo "<p><input type=\"submit\" name=\"next\" value=\"ä¸‹ä¸€æ­¥\"></p>";
 }
 
 if ($step==4) {
 
-	echo "<p><b>Ìí¼Ó¹ÜÀíÔ±ÕÊºÅ</b></p>";
+	echo "<p><b>æ·»åŠ ç®¡ç†å‘˜å¸å·</b></p>";
 	echo "<p><form action=\"install.php\"  method=\"post\"></p>";
 	echo "<p><input type=\"hidden\" name=\"step\" value=\"".($step+1)."\"></p>";
-    echo "<p>ÓÃ»§Ãû: <input type=\"text\" value=\"\" name=\"username\"></p>";
-    echo "<p>ÓÃ»§ÃÜÂë: <input type=\"password\" value=\"\" name=\"password\"></p>";
-    echo "<p>È·ÈÏÓÃ»§ÃÜÂë: <input type=\"password\" value=\"\" name=\"password2\"></p>";
-    echo "<p><input type=\"submit\" name=\"next\" value=\"ÏÂÒ»²½\"></p>";
+    echo "<p>ç”¨æˆ·å: <input type=\"text\" value=\"\" name=\"username\"></p>";
+    echo "<p>ç”¨æˆ·å¯†ç : <input type=\"password\" value=\"\" name=\"password\"></p>";
+    echo "<p>ç¡®è®¤ç”¨æˆ·å¯†ç : <input type=\"password\" value=\"\" name=\"password2\"></p>";
+    echo "<p><input type=\"submit\" name=\"next\" value=\"ä¸‹ä¸€æ­¥\"></p>";
 }
 
 if ($step==5) {
 
     if (trim($username)=="" OR trim($password)=="") {
-        sa_exit("Çë·µ»Ø²¢ÊäÈëËùÓĞÑ¡Ïî");
+        sa_exit("è¯·è¿”å›å¹¶è¾“å…¥æ‰€æœ‰é€‰é¡¹");
     }
 	if(strlen($_POST['password']) < 6)
 	{
-		sa_exit("ÃÜÂë³¤¶È²»ÄÜĞ¡ÓÚ6Î»","javascript:history.go(-1);");
+		sa_exit("å¯†ç é•¿åº¦ä¸èƒ½å°äº6ä½","javascript:history.go(-1);");
 	}
     if ($password!=$password2) {
-        sa_exit("Á½¸öÊäÈëµÄÃÜÂë²»ÏàÍ¬,Çë·µ»ØÖØĞÂÊäÈë");
+        sa_exit("ä¸¤ä¸ªè¾“å…¥çš„å¯†ç ä¸ç›¸åŒ,è¯·è¿”å›é‡æ–°è¾“å…¥");
     }
     $DB->query("INSERT INTO ".$db_prefix."user (username,password)
-                       VALUES ('".htmlspecialchars(trim($_POST[username]))."','".md5(trim($_POST[password]))."')");
+                       VALUES ('".htmlspecialchars(trim($_POST['username']))."','".md5(trim($_POST['password']))."')");
 
 
-    echo "<p>°²×°Íê±Ï,ÇëÉ¾³ı°²×°ÎÄ¼ş install.php,ÒÔÃâ±»ËûÈË¶ñÒâÀûÓÃ.</p>";
-    echo "<p>¸ĞĞ»ÄúÊ¹ÓÃ±¾³ÌĞò.</p>";
-    echo "<p><a href=\"index.php\">µÇÂ½¿ØÖÆÃæ°æ</a></p>";
+    echo "<p>å®‰è£…å®Œæ¯•,è¯·åˆ é™¤å®‰è£…æ–‡ä»¶ install.php,ä»¥å…è¢«ä»–äººæ¶æ„åˆ©ç”¨.</p>";
+    echo "<p>æ„Ÿè°¢æ‚¨ä½¿ç”¨æœ¬ç¨‹åº.</p>";
+    echo "<p><a href=\"index.php\">ç™»é™†æ§åˆ¶é¢ç‰ˆ</a></p>";
 
 }
 cpfooter();
